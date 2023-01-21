@@ -8,9 +8,10 @@ const engine = FiltersEngine.parse(
 
 console.log('finished loading file')
 
+console.time('matching engine')
 const { match } = engine.match(
   Request.fromRawDetails({
     url: 'http://8boobs.com',
   })
 )
-console.log(match)
+console.timeEnd('matching engine')
